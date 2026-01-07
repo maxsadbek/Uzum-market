@@ -12,6 +12,7 @@ const App = () => {
   const [openModal, setOpenModal] = useState(false);
   const [navModal, setNavModal] = useState(false);
   const [flagDown, setFlagDown] = useState(false);
+  const [menuBar, setMenuBar] = useState(false);
 
   const toggleModal = () => {
     setOpenModal(!openModal);
@@ -23,6 +24,11 @@ const App = () => {
 
   const downFlag = () => {
     setFlagDown(!flagDown);
+  };
+
+  const menuToggle = () => {
+    setMenuBar(!menuBar);
+    console.log(menuBar);
   };
 
   return (
@@ -258,7 +264,10 @@ const App = () => {
             uzum market
           </h3>
         </div>
-        <div className="flex items-center gap-1.5 bg-violet-200 p-1.5 px-4 text-violet-600 rounded-[5px] hover:bg-violet-300 duration-200 cursor-pointer">
+        <div
+          onClick={menuToggle}
+          className="flex items-center gap-1.5 bg-violet-200 p-1.5 px-4 text-violet-600 rounded-[5px] hover:bg-violet-300 duration-200 cursor-pointer"
+        >
           <IoIosApps />
           <h3>Katalog</h3>
         </div>
@@ -266,7 +275,7 @@ const App = () => {
           <input
             type="text"
             placeholder="Mahsulotlar va turkumlar izlash"
-            className="border-1 p-1.5 w-[500px] outline-hidden border-gray-300 rounded-l-[5px]"
+            className="border-1 p-1.5 w-[520px] outline-hidden border-gray-300 rounded-l-[5px]"
           />
           <span className=" bg-violet-400 text-white w-15 h-full p-[9px] rounded-r-[5px] ">
             <CiSearch size={20} />
@@ -294,6 +303,27 @@ const App = () => {
           <p className="text-[15px] font-semibold">Savat</p>
         </div>
       </div>
+      {menuBar && (
+        <div className="big-container m-auto">
+          <div className="w-55 border-r-[1px] border-gray-400">
+            <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
+              Havta tovarlari <span className="text-gray-400"><GoChevronRight size={20} /></span>
+            </h3>
+            <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
+              Qishgi kolleksiya <span className="text-gray-400"><GoChevronRight size={20} /></span>
+            </h3>{" "}
+            <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
+              Sizning go'zalligingiz <span className="text-gray-400"><GoChevronRight size={20} /></span>
+            </h3>{" "}
+            <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
+              Xobbi va ijod <span className="text-gray-400"><GoChevronRight size={20} /></span>
+            </h3>{" "}
+            <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
+              Smartfonlari <span className="text-gray-400"><GoChevronRight size={20} /></span>
+            </h3>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
