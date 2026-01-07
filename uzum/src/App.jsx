@@ -4,10 +4,14 @@ import { IoIosArrowDown } from "react-icons/io";
 import { MdOutlineClose } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { GoChevronRight } from "react-icons/go";
+import Logo from "./Images/logo.png"
+import Uzb from "./Images/uzb-logo.png"
+import Rus from "./Images/russian-logo.png"
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
   const [navModal, setNavModal] = useState(false);
+  const [flagDown, setFlagDown] = useState(false)
 
   const toggleModal = () => {
     setOpenModal(!openModal);
@@ -16,6 +20,10 @@ const App = () => {
   const buyurtmaModal = () => {
     setNavModal(!navModal);
   };
+
+  const downFlag = () =>{
+    setFlagDown(!flagDown)
+  }
 
   return (
     <header className="relative">
@@ -52,11 +60,20 @@ const App = () => {
             >
               Buyurtmalarim
             </p>
-            <div></div>
+            <div onClick={downFlag}>
+              <div className="flex items-center gap-1 cursor-pointer">
+                <img
+                  src={Uzb}
+                  alt="this is uzb logo"
+                  width={"20x"}
+                  className="h-[20px] rounded-[50%]"
+                />
+                <p>O'zbekcha</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
       {openModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
@@ -211,11 +228,34 @@ const App = () => {
               </a>
             </p>
             <p className="text-center mt-4">
-              <a href="#" className="underline decoration-1 text-gray-500">UzumId nima ?</a>
+              <a href="#" className="underline decoration-1 text-gray-500">
+                UzumId nima ?
+              </a>
             </p>
           </div>
         </div>
       )}
+      {flagDown && (
+        <div onClick={downFlag} className="absolute right-35 shadow-lg p-2.5 top-6.5 duration-200 rounded-b-[10px] hover:bg-gray-100 cursor-pointer">
+          <div className="flex items-center gap-1">
+            <img
+              src={Rus}
+              alt="this is uzb logo"
+              width={"20x"}
+              className="h-[20px] rounded-[50%]"
+            />
+            <p>Русский</p>
+          </div>
+        </div>
+      )}
+      <div className="big-container m-auto mt-4.5">
+        <div className="flex items-center gap-1.5 cursor-pointer">
+          <img src={Logo} alt="" />
+          <h3 className="text-2xl logo-text text-violet-600 font-bold">
+            uzum market
+          </h3>
+        </div>
+      </div>
     </header>
   );
 };

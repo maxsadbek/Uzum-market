@@ -3,3 +3,7 @@
 .big-container{
     @apply w-[1250px]
 }
+
+.logo-text{
+    font-family: 'Gals', sans-serif;
+}
