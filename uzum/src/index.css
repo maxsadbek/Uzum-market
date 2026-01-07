@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.big-container{
+    @apply w-[1250px]
+}
