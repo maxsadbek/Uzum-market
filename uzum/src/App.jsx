@@ -357,9 +357,7 @@ const App = () => {
                 alt="this is fire img"
                 className="w-7 h-7 object-cover"
               />
-              <p className="text-[14px] font-medium">
-                Elektronika
-              </p>
+              <p className="text-[14px] font-medium">Elektronika</p>
               <span className="text-gray-400">
                 <GoChevronRight size={20} />
               </span>
@@ -536,6 +534,41 @@ const App = () => {
           </div>
         </div>
       )}
+      <div className="flex big-container m-auto justify-between">
+        <h4 className="cursor-pointer font-medium text-[14px] mt-2">
+          Hafta tovarlari
+        </h4>
+        <h4 className="cursor-pointer font-medium text-[14px] mt-2">
+          Qishki kolleksiya
+        </h4>
+        <h4 className="cursor-pointer font-medium text-[14px] mt-2">
+          Sizning go'zalligingiz
+        </h4>
+        <h4 className="cursor-pointer font-medium text-[14px] mt-2">
+          Xobbi va ijod
+        </h4>
+        <h4 className="cursor-pointer font-medium text-[14px] mt-2">
+          Smartfonlari
+        </h4>
+        <p className="hover:text-violet-400 cursor-pointer text-[14px] mt-2 duration-150">
+          Turizm ovi va ochilik
+        </p>
+        <p className="hover:text-violet-400 cursor-pointer text-[14px] mt-2 duration-150">
+          Elektronika
+        </p>
+        <p className="hover:text-violet-400 cursor-pointer text-[14px] mt-2 duration-150">
+          Maishiy texnika
+        </p>
+        <p className="hover:text-violet-400 cursor-pointer text-[14px] mt-2 duration-150">
+          Kiyim
+        </p>
+        <p
+          onClick={menuToggle}
+          className="flex items-center hover:text-violet-400 cursor-pointer text-[14px] mt-2 duration-150"
+        >
+          Yana <GoChevronRight />
+        </p>
+      </div>
     </header>
   );
 };
