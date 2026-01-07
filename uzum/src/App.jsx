@@ -1,9 +1,9 @@
-import React from 'react'
+import Logo from "./Images/Logo"
 
 const App = () => {
   return (
     <div>
-      
+        
     </div>
   )
 }
