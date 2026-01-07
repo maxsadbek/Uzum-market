@@ -7,6 +7,8 @@ import { GoChevronRight } from "react-icons/go";
 import Logo from "./Images/logo.png";
 import Uzb from "./Images/uzb-logo.png";
 import Rus from "./Images/russian-logo.png";
+import Fire from "./Images/fire.png"
+import Headphones from "./Images/headphone-symbol.png";
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -304,23 +306,233 @@ const App = () => {
         </div>
       </div>
       {menuBar && (
-        <div className="big-container m-auto">
+        <div className="big-container m-auto flex mt-2">
           <div className="w-55 border-r-[1px] border-gray-400">
             <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
-              Havta tovarlari <span className="text-gray-400"><GoChevronRight size={20} /></span>
+              Havta tovarlari{" "}
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
             </h3>
             <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
-              Qishgi kolleksiya <span className="text-gray-400"><GoChevronRight size={20} /></span>
+              Qishgi kolleksiya{" "}
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
             </h3>{" "}
             <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
-              Sizning go'zalligingiz <span className="text-gray-400"><GoChevronRight size={20} /></span>
+              Sizning go'zalligingiz{" "}
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
             </h3>{" "}
             <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
-              Xobbi va ijod <span className="text-gray-400"><GoChevronRight size={20} /></span>
+              Xobbi va ijod{" "}
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
             </h3>{" "}
             <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
-              Smartfonlari <span className="text-gray-400"><GoChevronRight size={20} /></span>
+              Smartfonlari{" "}
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
             </h3>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Fire}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Turizm va baliq ovi va ovchilik
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Headphones}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Elektronika
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Fire}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Turizm va baliq ovi va ovchilik
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Fire}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Turizm va baliq ovi va ovchilik
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Fire}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Turizm va baliq ovi va ovchilik
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Fire}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Turizm va baliq ovi va ovchilik
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Fire}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Turizm va baliq ovi va ovchilik
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Fire}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Turizm va baliq ovi va ovchilik
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+            <div className="ml-1 flex gap-1 mt-4.5 cursor-pointer hover:text-violet-400 ">
+              <img
+                src={Fire}
+                alt="this is fire img"
+                className="w-7 h-7 object-cover"
+              />
+              <p className="text-[14px] font-medium">
+                Turizm va baliq ovi va ovchilik
+              </p>
+              <span className="text-gray-400">
+                <GoChevronRight size={20} />
+              </span>
+            </div>
+          </div>
+          <div className="p-4 px-7">
+            <h3 className="text-[18px] flex items-center gap-2.5 font-semibold hover:text-violet-400 cursor-pointer">
+              Turizm, baliq ovi va ovchilik{" "}
+              <span>
+                <GoChevronRight size={22} />
+              </span>
+            </h3>
+            <div className="mt-3 flex gap-7">
+              <div>
+                <div className="">
+                  <h4 className="text-[15px] font-semibold hover:text-violet-400 cursor-pointer duration-100">
+                    Chodirlar, tentlar va shatyorlar
+                  </h4>
+                  <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100">
+                    Chodirlar
+                  </p>
+                  <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100">
+                    Tentlar va chodirlar
+                  </p>
+                  <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100">
+                    Aksussuarlar va tentlar uchun
+                  </p>
+                </div>
+                <div>
+                  <br />
+                  <h4 className="text-[15px] font-semibold hover:text-violet-400 cursor-pointer duration-100">
+                    Turizm va ochiq havoda dam olish
+                  </h4>
+                  <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                    Fonarlar va aksessuarlar
+                  </p>
+                  <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                    Turizm va dam olish uchun aksessuarlar
+                  </p>
+                  <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                    Sayohat uchun ryukzaklar va sumkalar
+                  </p>{" "}
+                  <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                    Qatlanadigan sayyohlik stullari
+                  </p>{" "}
+                </div>
+              </div>
+              <div>
+                <h4 className="text-[15px] font-semibold hover:text-violet-400 cursor-pointer duration-100">
+                  Baliq ovi
+                </h4>
+                <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                  G'altak baliq ovlash uchun
+                </p>
+                <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                  Baliq ovlash asboblari va aksessuarlar
+                </p>
+                <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                  Baliq ovi uchun primankalar va o'ljalar
+                </p>
+                <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                  Qayiqlar va aksessuarlar
+                </p>
+              </div>
+              <div>
+                <h4 className="text-[15px] font-semibold hover:text-violet-400 cursor-pointer duration-100">
+                  Ov va otish mashg'ulotlari
+                </h4>
+                <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                  Cho'zlamalar
+                </p>
+                <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                  Optika va diqqatga sazovor joylar
+                </p>
+                <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                  Sport otish mashg'ulotlari
+                </p>
+                <p className="text-[14px] font-medium text-gray-500 cursor-pointer hover:text-violet-400 duration-100 mt-2">
+                  Trofeylar uchun bezak
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       )}
