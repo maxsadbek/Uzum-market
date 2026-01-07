@@ -14,17 +14,39 @@ const App = () => {
 
   return (
     <header className="relative">
-      <div className="big-container m-auto p-4">
-        <div>
-          <div
-            onClick={toggleModal}
-            className="flex items-center gap-0.5 cursor-pointer w-max"
-          >
-            <FiMapPin />
-            <p className="font-medium">Oyim</p>
-            <p className="mt-1">
-              <IoIosArrowDown />
+      <div className="bg-[#F0F2F5]">
+        <div className="big-container m-auto py-1 flex items-center justify-between">
+          <div className="flex items-center gap-8">
+            <div
+              onClick={toggleModal}
+              className="flex items-center gap-1.5 cursor-pointer w-max"
+            >
+              <FiMapPin />
+              <p className="font-medium text-[15px]">Oyim</p>
+              <p className="mt-1">
+                <IoIosArrowDown />
+              </p>
+            </div>
+            <h4 className="cursor-pointer font-[500] text-[15px]">
+              Topshirish punktlari
+            </h4>
+          </div>
+          <div className="flex items-center gap-2.5">
+            <p className="text-violet-500 border-r-2 pr-2 border-[#dddddd] font-medium text-[15px] cursor-pointer">
+              Sotuvchi bo'lish
             </p>
+            <p className="text-violet-500 font-medium text-[15px] cursor-pointer">
+              Topshirish punktini ochish
+            </p>
+            <p className=" text-[15px] text-[#4d4f58] hover:text-[#1e1f22] cursor-pointer font-medium ml-2">
+              Savol javob
+            </p>
+            <p onClick={toggleModal} className=" text-[15px] text-[#4d4f58] hover:text-[#1e1f22] cursor-pointer font-medium ml-2">
+              Buyurtmalarim
+            </p>
+            <div>
+
+            </div>
           </div>
         </div>
       </div>
