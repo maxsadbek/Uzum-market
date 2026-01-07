@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { FiMapPin } from "react-icons/fi";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosApps } from "react-icons/io";
 import { MdOutlineClose } from "react-icons/md";
-import { CiSearch } from "react-icons/ci";
+import { CiSearch, CiUser, CiHeart, CiShoppingCart } from "react-icons/ci";
 import { GoChevronRight } from "react-icons/go";
-import Logo from "./Images/logo.png"
-import Uzb from "./Images/uzb-logo.png"
-import Rus from "./Images/russian-logo.png"
+import Logo from "./Images/logo.png";
+import Uzb from "./Images/uzb-logo.png";
+import Rus from "./Images/russian-logo.png";
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
   const [navModal, setNavModal] = useState(false);
-  const [flagDown, setFlagDown] = useState(false)
+  const [flagDown, setFlagDown] = useState(false);
 
   const toggleModal = () => {
     setOpenModal(!openModal);
@@ -21,9 +21,9 @@ const App = () => {
     setNavModal(!navModal);
   };
 
-  const downFlag = () =>{
-    setFlagDown(!flagDown)
-  }
+  const downFlag = () => {
+    setFlagDown(!flagDown);
+  };
 
   return (
     <header className="relative">
@@ -32,7 +32,7 @@ const App = () => {
           <div className="flex items-center gap-8">
             <div
               onClick={toggleModal}
-              className="flex items-center gap-1.5 cursor-pointer w-max"
+              className={`flex items-center gap-1.5 cursor-pointer w-max`}
             >
               <FiMapPin />
               <p className="font-medium text-[15px]">Oyim</p>
@@ -236,7 +236,10 @@ const App = () => {
         </div>
       )}
       {flagDown && (
-        <div onClick={downFlag} className="absolute right-35 shadow-lg p-2.5 top-6.5 duration-200 rounded-b-[10px] hover:bg-gray-100 cursor-pointer">
+        <div
+          onClick={downFlag}
+          className="absolute right-35 shadow-lg p-2.5 top-6.5 duration-200 rounded-b-[10px] hover:bg-gray-100 cursor-pointer"
+        >
           <div className="flex items-center gap-1">
             <img
               src={Rus}
@@ -248,12 +251,47 @@ const App = () => {
           </div>
         </div>
       )}
-      <div className="big-container m-auto mt-4.5">
+      <div className="big-container m-auto mt-4.5 flex items-center gap-4">
         <div className="flex items-center gap-1.5 cursor-pointer">
           <img src={Logo} alt="" />
           <h3 className="text-2xl logo-text text-violet-600 font-bold">
             uzum market
           </h3>
+        </div>
+        <div className="flex items-center gap-1.5 bg-violet-200 p-1.5 px-4 text-violet-600 rounded-[5px] hover:bg-violet-300 duration-200 cursor-pointer">
+          <IoIosApps />
+          <h3>Katalog</h3>
+        </div>
+        <div className="flex items-center">
+          <input
+            type="text"
+            placeholder="Mahsulotlar va turkumlar izlash"
+            className="border-1 p-1.5 w-[500px] outline-hidden border-gray-300 rounded-l-[5px]"
+          />
+          <span className=" bg-violet-400 text-white w-15 h-full p-[9px] rounded-r-[5px] ">
+            <CiSearch size={20} />
+          </span>
+        </div>
+        <div
+          onClick={buyurtmaModal}
+          className="flex items-center gap-1 ml-2 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer"
+        >
+          <p className="font-bold">
+            <CiUser size={20} />
+          </p>
+          <p className="text-[15px] font-semibold">Kirish</p>
+        </div>
+        <div className="flex items-center gap-1 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer ">
+          <p className="font-bold">
+            <CiHeart size={20} />
+          </p>
+          <p className="text-[15px] font-semibold">Saralangan</p>
+        </div>
+        <div className="flex items-center gap-1 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer ">
+          <p className="font-bold">
+            <CiShoppingCart size={20} />
+          </p>
+          <p className="text-[15px] font-semibold">Savat</p>
         </div>
       </div>
     </header>
