@@ -7,8 +7,9 @@ import { GoChevronRight } from "react-icons/go";
 import Logo from "./Images/logo.png";
 import Uzb from "./Images/uzb-logo.png";
 import Rus from "./Images/russian-logo.png";
-import Fire from "./Images/fire.png"
+import Fire from "./Images/fire.png";
 import Headphones from "./Images/headphone-symbol.png";
+import { FaOpencart } from "react-icons/fa6";
 
 const App = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -43,7 +44,7 @@ const App = () => {
               className={`flex items-center gap-1.5 cursor-pointer w-max`}
             >
               <FiMapPin />
-              <p className="font-medium text-[15px]">Oyim</p>
+              <p className="font-medium text-[15px]">Toshkent</p>
               <p className="mt-1">
                 <IoIosArrowDown />
               </p>
@@ -300,7 +301,7 @@ const App = () => {
         </div>
         <div className="flex items-center gap-1 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer ">
           <p className="font-bold">
-            <CiShoppingCart size={20} />
+            <FaOpencart size={20} />
           </p>
           <p className="text-[15px] font-semibold">Savat</p>
         </div>
@@ -455,12 +456,20 @@ const App = () => {
             </div>
           </div>
           <div className="p-4 px-7">
-            <h3 className="text-[18px] flex items-center gap-2.5 font-semibold hover:text-violet-400 cursor-pointer">
-              Turizm, baliq ovi va ovchilik{" "}
-              <span>
-                <GoChevronRight size={22} />
-              </span>
-            </h3>
+            <div className="flex items-center justify-between">
+              <h3 className="text-[18px] flex items-center gap-2.5 font-semibold hover:text-violet-400 cursor-pointer">
+                Turizm, baliq ovi va ovchilik{" "}
+                <span>
+                  <GoChevronRight size={22} />
+                </span>
+              </h3>
+              <p
+                onClick={menuToggle}
+                className="text-[22px] cursor-pointer -mr-15 text-gray-500 p-1 hover:bg-gray-100 rounded-[100%]"
+              >
+                <MdOutlineClose />
+              </p>
+            </div>
             <div className="mt-3 flex gap-7">
               <div>
                 <div className="">
