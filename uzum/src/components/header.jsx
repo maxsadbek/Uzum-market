@@ -333,7 +333,7 @@ const App = () => {
         </div>
       </div>
       {menuBar && (
-        <div className="big-container m-auto flex mt-2">
+        <div className=" px-35 flex mt-2 shadow-[0_10px_10px_-5px_rgba(0,0,0,0.3)]">
           <div className="w-55 border-r-[1px] border-gray-400">
             <h3 className="flex items-center justify-between cursor-pointer hover:text-violet-400 duration-100 mt-5.5 text-[15px] font-semibold ml-2">
               Havta tovarlari{" "}

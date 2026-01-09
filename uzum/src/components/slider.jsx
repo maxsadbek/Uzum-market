@@ -24,7 +24,7 @@ const Slider = () => {
 
   return (
     <div className="relative z-11 group w-full max-w-[1240px] mx-auto mt-4 px-4">
-      <div className="relative w-full h-[200px] sm:h-[350px] lg:h-[500px] overflow-hidden rounded-2xl shadow-lg">
+      <div className="relative w-full h-[200px] sm:h-[350px] lg:h-[400px] overflow-hidden rounded-2xl shadow-lg">
         <div
           className="flex w-full h-full transition-transform duration-500 ease-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
