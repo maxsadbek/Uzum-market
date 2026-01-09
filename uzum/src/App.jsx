@@ -36,12 +36,12 @@ const App = () => {
 
   return (
     <header className="relative">
-      <div className="bg-[#F0F2F5]">
-        <div className="big-container m-auto py-1 flex items-center justify-between">
-          <div className="flex items-center gap-8">
+      <div className="lg:bg-[#F0F2F5] hidden lg:flex">
+        <div className="big-container m-auto lg:py-1 lg:flex lg:items-center lg:justify-between">
+          <div className="lg:flex lg:items-center lg:gap-8">
             <div
               onClick={toggleModal}
-              className={`flex items-center gap-1.5 cursor-pointer w-max`}
+              className={` flex  items-center gap-1.5 cursor-pointer w-max`}
             >
               <FiMapPin />
               <p className="font-medium text-[15px]">Toshkent</p>
@@ -83,13 +83,28 @@ const App = () => {
           </div>
         </div>
       </div>
+      <div className="flex lg:hidden items-center justify-between px-3 pt-2">
+        <div
+          onClick={toggleModal}
+          className={`flex lg:hidden items-center gap-1.5 cursor-pointer w-max`}
+        >
+          <FiMapPin />
+          <p className="font-medium text-[15px]">Toshkent</p>
+          <p className="mt-1">
+            <IoIosArrowDown />
+          </p>
+        </div>
+        <p onClick={toggleModal} className="text-[13px] text-gray-600">
+          yetkazib beriladigan shahar
+        </p>
+      </div>
       {openModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div
             className="absolute inset-0 bg-black/50"
             onClick={toggleModal}
           ></div>
-          <div className="relative z-50 w-full max-w-2xl bg-white p-6 rounded-xl shadow-lg mx-4">
+          <div className="relative lg:z-50 lg:w-full max-w-2xl bg-white p-3 lg:rounded-xl lg:shadow-lg lg:mx-4: w-[100%] h-[100%]">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-[22px] font-semibold">Shaharlarni tanlang</h3>
               <button
@@ -109,7 +124,7 @@ const App = () => {
                 className="w-full pl-10 pr-4 py-3 bg-gray-100 border-none rounded-lg outline-none"
               />
             </div>
-            <div className="overflow-y-auto px-1 mt-1.5 h-90">
+            <div className="overflow-y-auto px-1 mt-1.5 lg:h-90 h-160">
               {[
                 "Andijon (O‘zbekiston)",
                 "Buxoro (O‘zbekiston)",
@@ -164,7 +179,8 @@ const App = () => {
             className="absolute inset-0 bg-black/50"
             onClick={buyurtmaModal}
           ></div>
-          <div className="relative z-50 w-full max-w-[470px] bg-white p-6 px-10.5 rounded-xl shadow-lg mx-4 top-40 left-[32rem]">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-[470px] bg-white p-6 px-10.5 rounded-xl shadow-lg">
+            {" "}
             <div className="flex items-center">
               <div className="big-container m-auto flex ml-[8rem] gap-2 items-center">
                 <svg
@@ -465,7 +481,7 @@ const App = () => {
               </h3>
               <p
                 onClick={menuToggle}
-                className="text-[22px] cursor-pointer -mr-15 text-gray-500 p-1 hover:bg-gray-100 rounded-[100%]"
+                className="text-[22px] cursor-pointer -mr-35 text-gray-500 p-1 hover:bg-gray-100 rounded-[100%]"
               >
                 <MdOutlineClose />
               </p>
