@@ -184,12 +184,12 @@ const App = () => {
         </div>
       )}
       {navModal && (
-        <div className="w-full h-full fixed -mt-8">
+        <div className="w-full h-full fixed -mt-8 z-9999">
           <div
             className="absolute inset-0 bg-black/50"
             onClick={buyurtmaModal}
           ></div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-[470px] bg-white p-6 px-10.5 rounded-xl shadow-lg">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-80 w-full max-w-[470px] bg-white p-6 px-10.5 rounded-xl shadow-lg">
             {" "}
             <div className="flex items-center">
               <div className="big-container m-auto flex ml-[8rem] gap-2 items-center">
