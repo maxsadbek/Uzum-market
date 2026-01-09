@@ -7,6 +7,7 @@ const App = () => {
     <div>
       <Header />
       <Slider/>
+      <Card />
     </div>
   )
 }
