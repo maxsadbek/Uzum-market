@@ -191,6 +191,9 @@ const Footer = () => {
           </div>
         </div>
       )}
+      <div className="hidden lg:block">
+        
+      </div>
     </footer>
   );
 };
