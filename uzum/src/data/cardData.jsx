@@ -318,4 +318,68 @@ export const PhoneData = [
   },
 ];
 
+export const CheapData = [
+  {
+    id: 1,
+    img: "https://images.uzum.uz/cve26k5pb7f9qcnikucg/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "1 745 030",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "1 799 000",
+    title:
+      "Smartfon Honor X7c, 16GB (8+8) + 512GB, suvga chidamli, katta batareya",
+    star: <FaStar />,
+    rating: 4.8,
+    comments: "454 sharhlar",
+  },
+  {
+    id: 2,
+    img: "https://images.uzum.uz/d5d396bs2tab83s9o6bg/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "379 300",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "399 990",
+    title: "ARC-950 kuchli payvandlash qurilmasi, IGBT texnologiya, 230 V",
+    star: <FaStar />,
+    rating: 4.9,
+    comments: "59 sharhlar",
+  },
+  {
+    id: 3,
+    img: "https://images.uzum.uz/d59a5k3tqdhjp1vd7uc0/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "62 030",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "89 000",
+    title: "Erkaklar qul soati toplami, sovgaga qutisidagi klassik soat",
+    star: <FaStar />,
+    rating: 5.0,
+    comments: "6 sharhlar",
+  },
+  {
+    id: 4,
+    img: "https://images.uzum.uz/d59mskbtqdhjp1vd9ub0/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "267 930",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "369 000",
+    title: "Akumlyatorli GANTA shrupaver shutkali / chutkasiz 18V / 21 V",
+    star: <FaStar />,
+    rating: 4.7,
+    comments: "89 sharhlar",
+  },
+  {
+    id: 5,
+    img: "https://images.uzum.uz/d59of3rs2tab83s95j2g/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "1 889 490",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "1 917 000",
+    title: "Yugurish yulakchasi EasyFit E7, 120 kg gacha, elektor motorli, yigiladigan",
+    star: <FaStar />,
+    rating: 4.6,
+    comments: "235 sharhlar",
+  },
+];
+
 export default populariCardData;
