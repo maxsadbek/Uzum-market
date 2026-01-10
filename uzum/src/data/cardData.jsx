@@ -252,4 +252,70 @@ const populariCardData = [
   },
 ];
 
+export const PhoneData = [
+  {
+    id: 1,
+    img: "https://images.uzum.uz/cve26k5pb7f9qcnikucg/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "1 745 030",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "1 799 000",
+    title:
+      "Smartfon Honor X7c, 16GB (8+8) + 512GB, suvga chidamli, katta batareya",
+    star: <FaStar />,
+    rating: 4.8,
+    comments: "454 sharhlar",
+  },
+  {
+    id: 2,
+    img: "https://images.uzum.uz/cvmbrqdpb7f8td1j9e20/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "15 510 300",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "15 990 000",
+    title:
+      "Smartfon Samsung Galaxy S25 Ultra, 12GB+512GB, Dynamic AMOLED 2X, 5000 mAh",
+    star: <FaStar />,
+    rating: 5.0,
+    comments: "27 sharhlar",
+  },
+  {
+    id: 3,
+    img: "https://images.uzum.uz/cve274jvgbkm5ehl26sg/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "2 618 030",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "2 699 000",
+    title: 'Smartfon Honor X8c 8 GB + 256 GB, AMOLED 120Hz displey, 6.67"',
+    star: <FaStar />,
+    rating: 4.9,
+    comments: "112 sharhlar",
+  },
+  {
+    id: 4,
+    img: "https://images.uzum.uz/d41hrilv2sjj05os7k50/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "3 267 930",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "3 369 000",
+    title:
+      "Smartfon Honor X9D, AMOLED 120 Hz, 108 MP kamera, 6600 mA/soat, 66 Vt",
+    star: <FaStar />,
+    rating: 4.7,
+    comments: "89 sharhlar",
+  },
+  {
+    id: 5,
+    img: "https://images.uzum.uz/cuib3etht56sc95d8r1g/t_product_540_high.jpg",
+    hearIcon: <CiHeart />,
+    price: "889 490",
+    plastikCard: <CiCreditCard1 />,
+    oldPirce: "917 000",
+    title: "Smartfon Redmi Note 14, 4+4 / 128 GB, Katta ekran, 5000 mAh",
+    star: <FaStar />,
+    rating: 4.6,
+    comments: "235 sharhlar",
+  },
+];
+
 export default populariCardData;
