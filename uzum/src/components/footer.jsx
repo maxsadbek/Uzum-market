@@ -4,9 +4,10 @@ import { MdOutlineClose } from "react-icons/md";
 import { GoChevronRight } from "react-icons/go";
 import Fire from "../Images/fire.png";
 import Headphones from "../Images/headphone-symbol.png";
-import { FaOpencart } from "react-icons/fa";
-import Buger from "./../Images/burger.jpg"
+import { FaApple, FaOpencart } from "react-icons/fa";
+import Buger from "./../Images/burger.jpg";
 import { CiUser } from "react-icons/ci";
+import PlayMarket from "./../Images/playmarket-icon.webp";
 
 const Footer = () => {
   const [menuBar, setMenuBar] = useState(false);
@@ -68,7 +69,9 @@ const Footer = () => {
           <p className="text-[12px] text-violet-800">Bosh sahifa</p>
         </div>
         <div className="items-center">
-          <p className="ml-4 mt-1 text-[24px]"><CiUser /></p>
+          <p className="ml-4 mt-1 text-[24px]">
+            <CiUser />
+          </p>
           <p className="text-[12px] text-violet-800">Bosh sahifa</p>
         </div>
       </div>
@@ -191,8 +194,70 @@ const Footer = () => {
           </div>
         </div>
       )}
-      <div className="hidden lg:block">
-        
+      <div className="hidden lg:flex container m-auto px-35 mt-10 justify-between">
+        <div className="">
+          <h3 className="text-[15px] font-medium">Biz haqimizda</h3>
+          <p className="text-[13px] font-medium text-gray-500 mt-1.5 cursor-pointer">
+            Topshirish punkti
+          </p>
+          <p className="text-[13px] font-medium text-gray-500 mt-1.5 cursor-pointer">
+            Vakansiya
+          </p>
+        </div>
+
+        <div className="">
+          <h3 className="text-[15px] font-medium">Foydalanuvchilarga</h3>
+          <p className="text-[13px] font-medium text-gray-500 mt-1.5 cursor-pointer">
+            Biz bilan bog'lanish
+          </p>
+          <p className="text-[13px] font-medium text-gray-500 mt-1.5 cursor-pointer">
+            Savol-Javob
+          </p>
+        </div>
+
+        <div className="">
+          <h3 className="text-[15px] font-medium">Tadbirkorlar</h3>
+          <p className="text-[13px] font-medium text-gray-500 mt-1.5 cursor-pointer">
+            Uzumda soting
+          </p>
+          <p className="text-[13px] font-medium text-gray-500 mt-1.5 cursor-pointer">
+            Sotuvchi kabinetiga kirish
+          </p>
+          <p className="text-[13px] font-medium text-gray-500 mt-1.5 cursor-pointer">
+            Topshirish punktini ochish
+          </p>
+        </div>
+
+        <div className="mr-12">
+          <h3 className="text-[15px] font-medium">Ilovani yuklab olish</h3>
+          <div className="flex">
+            <div className="flex items-center gap-1">
+              <p className="">
+                <FaApple />
+              </p>
+              <p className="text-[13px] font-medium">AppStore</p>
+            </div>
+            <div className="flex items-center gap-1">
+              <p className="">
+                <img
+                  src={PlayMarket}
+                  alt="this is playmarket icon"
+                  className="w-15 rounded-[100%]"
+                />
+              </p>
+              <p className="text-[13px] font-medium">Google play</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="hidden lg:flex items-center justify-between container m-auto px-35 gap-1 border-t-[1px] border-gray-300 mt-7 mb-2 pt-2">
+        <p className="text-[14px] font-medium">Maxfiylik kelishuv</p>
+        <p className="text-[14px  font-medium">Foydalanuvchi kelishuvi</p>
+        <h3 className="text-[16px] font-medium">Shaxsiy ma'lumotlarni qayta ishlash nizomi Mchj xk</h3>
+        <p className="text-[12px] text-gray-500">
+          «2026© XK MCHJ «UZUM MARKET». STIR 309376127. Barcha huquqlar
+          himoyalangan»
+        </p>
       </div>
     </footer>
   );
