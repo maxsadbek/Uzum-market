@@ -10,13 +10,13 @@ import Rus from "../Images/russian-logo.png";
 import Fire from "../Images/fire.png";
 import Headphones from "../Images/headphone-symbol.png";
 import { FaOpencart } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [openModal, setOpenModal] = useState(false);
   const [navModal, setNavModal] = useState(false);
   const [flagDown, setFlagDown] = useState(false);
   const [menuBar, setMenuBar] = useState(false);
-  
 
   const toggleModal = () => {
     setOpenModal(!openModal);
@@ -290,9 +290,11 @@ const Header = () => {
       <div className="hidden big-container m-auto mt-4.5 lg:flex lg:items-center lg:gap-4">
         <div className="flex items-center gap-1.5 cursor-pointer">
           <img src={Logo} alt="" />
-          <h3 className="text-2xl logo-text text-violet-600 font-bold">
-            uzum market
-          </h3>
+          <Link to={"/"}>
+            <h3 className="text-2xl logo-text text-violet-600 font-bold">
+              uzum market
+            </h3>
+          </Link>
         </div>
         <div
           onClick={menuToggle}
@@ -320,12 +322,14 @@ const Header = () => {
           </p>
           <p className="text-[15px] font-semibold">Kirish</p>
         </div>
-        <div className="flex items-center gap-1 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer ">
-          <p className="font-bold">
-            <CiHeart size={20} />
-          </p>
-          <p className="text-[15px] font-semibold">Saralangan</p>
-        </div>
+        <Link to={"/Wishlist"}>
+          <div className="flex items-center gap-1 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer ">
+            <p className="font-bold">
+              <CiHeart size={20} />
+            </p>
+            <p className="text-[15px] font-semibold">Saralangan</p>
+          </div>
+        </Link>
         <div className="flex items-center gap-1 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer ">
           <p className="font-bold">
             <FaOpencart size={20} />

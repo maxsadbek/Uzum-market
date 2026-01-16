@@ -1,9 +1,8 @@
-import React from 'react'
 
 const Weshlis = () => {
   return (
-    <div>
-      dsadsa
+    <div className='container mx-auto px-35'>
+      Wishlist
     </div>
   )
 }
