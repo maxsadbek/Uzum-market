@@ -11,11 +11,12 @@ import Fire from "../Images/fire.png";
 import Headphones from "../Images/headphone-symbol.png";
 import { FaOpencart } from "react-icons/fa6";
 
-const App = () => {
+const Header = () => {
   const [openModal, setOpenModal] = useState(false);
   const [navModal, setNavModal] = useState(false);
   const [flagDown, setFlagDown] = useState(false);
   const [menuBar, setMenuBar] = useState(false);
+  
 
   const toggleModal = () => {
     setOpenModal(!openModal);
@@ -608,4 +609,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Header;

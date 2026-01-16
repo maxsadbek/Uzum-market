@@ -1,16 +1,27 @@
-import Header from "./components/header"
-import Slider from "./components/slider"
-import Card from "./components/card"
-import Footer from "./components/footer"
-const App = () => {
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Slider from "./components/Slider";
+import Card from "./components/Card";
+import Footer from "./components/Footer";
+import CardPage from "./Pages/CardPage";
+import Weshlis from "./Pages/Weshlis";
+const Home = () => {
   return (
-    <div>
+    <>
       <Header />
-      <Slider/>
+      <Slider />
       <Card />
       <Footer />
-    </div>
-  )
+    </>
+  );
+};
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/cart" element={<CardPage />} />
+      <Route path="/wishlist" element={<Weshlis />} />
+    </Routes>
+  );
 }
-
-export default App
+export default App;

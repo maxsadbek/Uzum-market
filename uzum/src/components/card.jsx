@@ -1,8 +1,8 @@
 import { LuChevronRight } from "react-icons/lu";
-import CardData from "./../data/cardData";
+import CardData from "../data/cardData";
 import { FaOpencart } from "react-icons/fa6";
-import { PhoneData } from "./../data/cardData";
-import { CheapData } from "./../data/cardData";
+import { PhoneData } from "../data/cardData";
+import { CheapData } from "../data/cardData";
 const Card = () => {
   return (
     <section className="container m-auto px-2 py-6 lg:px-34">
