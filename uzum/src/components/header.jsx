@@ -330,12 +330,14 @@ const Header = () => {
             <p className="text-[15px] font-semibold">Saralangan</p>
           </div>
         </Link>
-        <div className="flex items-center gap-1 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer ">
-          <p className="font-bold">
-            <FaOpencart size={20} />
-          </p>
-          <p className="text-[15px] font-semibold">Savat</p>
-        </div>
+        <Link to={"/cart"}>
+          <div className="flex items-center gap-1 hover:bg-gray-200 p-[10px] rounded-[5px] cursor-pointer ">
+            <p className="font-bold">
+              <FaOpencart size={20} />
+            </p>
+            <p className="text-[15px] font-semibold">Savat</p>
+          </div>
+        </Link>
       </div>
       {menuBar && (
         <div className=" px-35 flex mt-2 shadow-[0_10px_10px_-5px_rgba(0,0,0,0.3)]">

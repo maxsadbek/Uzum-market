@@ -2,8 +2,8 @@ import React from 'react'
 
 const CardPage = () => {
   return (
-    <div>
-      dsadsa
+    <div className='container mx-auto px-30'>
+
     </div>
   )
 }
