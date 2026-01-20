@@ -16,13 +16,14 @@ const Card = () => {
     const saved = localStorage.getItem("cartProducts");
     return saved ? JSON.parse(saved) : [];
   });
-
   const toggleLike = (item) => {
-    const key = `${item.section}_${item.id}`;
     setLiked((prev) => {
-      const newLiked = prev.includes(key)
-        ? prev.filter((k) => k !== key)
-        : [...prev, key];
+      const exists = prev.some(
+        (p) => p.section === item.section && p.id === item.id,
+      );
+      const newLiked = exists
+        ? prev.filter((p) => !(p.section === item.section && p.id === item.id))
+        : [...prev, item];
       localStorage.setItem("likedProducts", JSON.stringify(newLiked));
       return newLiked;
     });
@@ -87,7 +88,9 @@ const Card = () => {
             {item.oldPrice} so'm
           </p>
 
-          <p className="text-sm mt-2 line-clamp-2 min-h-[48px]">{item.title.slice(0,44)} ...</p>
+          <p className="text-sm mt-2 line-clamp-2 min-h-[48px]">
+            {item.title.slice(0, 44)} ...
+          </p>
 
           <div className="flex items-center gap-1 mt-2 text-sm">
             {item.star} <span>{item.rating}</span>
