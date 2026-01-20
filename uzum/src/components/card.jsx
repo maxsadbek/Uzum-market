@@ -1,287 +1,154 @@
+// Card.jsx
 import { LuChevronRight } from "react-icons/lu";
-import CardData from "../data/cardData";
 import { FaOpencart } from "react-icons/fa6";
-import { PhoneData } from "../data/cardData";
-import { CheapData } from "../data/cardData";
-import { useState } from "react";
 import { IoIosHeart } from "react-icons/io";
 import { IoCheckmarkDone } from "react-icons/io5";
+import { useState } from "react";
+import cardData from "../data/cardData";
 
 const Card = () => {
-  const [product, setProduct] = useState({});
-  const [liked, setLiked] = useState({});
+  const [liked, setLiked] = useState(() => {
+    const saved = localStorage.getItem("likedProducts");
+    return saved ? JSON.parse(saved) : [];
+  });
 
-  const getKey = (section, id) => `${section}_${id}`;
+  const [cart, setCart] = useState(() => {
+    const saved = localStorage.getItem("cartProducts");
+    return saved ? JSON.parse(saved) : [];
+  });
 
-  const productCard = (section, id) => {
-    const key = getKey(section, id);
-    setProduct((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
+  const toggleLike = (item) => {
+    const key = `${item.section}_${item.id}`;
+    setLiked((prev) => {
+      const newLiked = prev.includes(key)
+        ? prev.filter((k) => k !== key)
+        : [...prev, key];
+      localStorage.setItem("likedProducts", JSON.stringify(newLiked));
+      return newLiked;
+    });
   };
 
-  const likeToggle = (section, id) => {
-    const key = getKey(section, id);
-    setLiked((prev) => ({
-      ...prev,
-      [key]: !prev[key],
-    }));
+  const toggleCart = (item) => {
+    setCart((prev) => {
+      const exists = prev.some(
+        (p) => p.section === item.section && p.id === item.id,
+      );
+      const newCart = exists
+        ? prev.filter((p) => !(p.section === item.section && p.id === item.id))
+        : [...prev, item];
+      localStorage.setItem("cartProducts", JSON.stringify(newCart));
+      return newCart;
+    });
+  };
+
+  const getItemsBySection = (section) =>
+    cardData.filter((item) => item.section === section);
+
+  const renderProductCard = (item) => {
+    const key = `${item.section}_${item.id}`;
+    const isLiked = liked.includes(key);
+    const isInCart = cart.some(
+      (c) => c.section === item.section && c.id === item.id,
+    );
+
+    return (
+      <div
+        key={key}
+        className="bg-white rounded-2xl shadow hover:shadow-xl transition-shadow border border-gray-100 relative overflow-hidden"
+      >
+        <div className="h-48 lg:h-64 overflow-hidden">
+          <img
+            src={item.img}
+            alt={item.title}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        <button
+          onClick={() => toggleLike(item)}
+          className="absolute top-3 right-3 p-1 bg-white/80 rounded-full z-10 hover:bg-white transition cursor-pointer"
+        >
+          {isLiked ? (
+            <IoIosHeart className="text-red-500 text-xl" />
+          ) : (
+            <IoIosHeart className="text-violet-500 text-xl" />
+          )}
+        </button>
+
+        <div className="p-4">
+          <div className="flex items-center gap-2">
+            <span className="text-xl font-bold text-violet-700">
+              {item.price} so'm
+            </span>
+            <span className="text-violet-500">{item.plastikCard}</span>
+          </div>
+
+          <p className="text-sm text-gray-500 line-through">
+            {item.oldPrice} so'm
+          </p>
+
+          <p className="text-sm mt-2 line-clamp-2 min-h-[48px]">{item.title.slice(0,44)} ...</p>
+
+          <div className="flex items-center gap-1 mt-2 text-sm">
+            {item.star} <span>{item.rating}</span>
+            <span className="text-gray-500">({item.comments})</span>
+          </div>
+
+          <button
+            onClick={() => toggleCart(item)}
+            className={`mt-4 w-full py-2 rounded-xl text-white font-medium transition ${
+              isInCart
+                ? "bg-violet-500 hover:bg-violet-600"
+                : "bg-violet-700 hover:bg-violet-800"
+            }`}
+          >
+            {isInCart ? (
+              <span className="flex items-center justify-center gap-2">
+                Savatda <IoCheckmarkDone />
+              </span>
+            ) : (
+              <span className="flex items-center justify-center gap-2 text-[12px] lg:text-[16px]">
+                <FaOpencart /> Savatga qo‘shish
+              </span>
+            )}
+          </button>
+        </div>
+      </div>
+    );
   };
 
   return (
-    <section className="container m-auto px-2 py-6 lg:px-34">
-      <h2 className="flex items-center gap-1 text-xl lg:text-3xl font-semibold mb-6 cursor-pointer">
-        Mashhur
-        <span className="mt-1">
-          <LuChevronRight />
-        </span>
-      </h2>
+    <div className="container mx-auto px-4 py-8 lg:px-8 xl:max-w-7xl">
+      <div className="mb-12">
+        <h2 className="flex items-center gap-2 text-2xl lg:text-3xl font-bold mb-6">
+          Mashhur <LuChevronRight className="mt-1" />
+        </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 lg:gap-4 w-full">
-        {CardData.map((item) => {
-          const key = getKey("popular", item.id);
-          const isLiked = !!liked[key];
-          const isProduct = !!product[key];
-
-          return (
-            <div
-              key={item.id}
-              className="w-full flex flex-col bg-white rounded-2xl transition-shadow duration-300 hover:shadow-xl border border-gray-100 relative group cursor-pointer"
-            >
-              <div className="w-full h-[180px] lg:h-[240px] overflow-hidden rounded-t-2xl">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-              <div
-                className="absolute top-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full cursor-pointer z-10"
-                onClick={() => likeToggle("popular", item.id)}
-              >
-                {isLiked ? (
-                  <IoIosHeart className="text-red-500 text-xl" />
-                ) : (
-                  <IoIosHeart className="text-violet-400 text-xl" />
-                )}
-              </div>
-              <div className="p-2 lg:p-3 flex flex-col flex-grow">
-                <div className="flex items-center mb-1">
-                  <p className="text-[14px] lg:text-[17px] font-bold text-violet-600 leading-tight">
-                    {item.price}
-                  </p>
-                  <span className="text-[10px] lg:text-[15px] lg:mt-1 lg:ml-1 text-violet-400">
-                    {item.plastikCard}
-                  </span>
-                </div>
-                <p className="text-[11px] lg:text-[12px] text-gray-400 line-through">
-                  {item.oldPrice}
-                </p>
-                <p className="text-[12px] lg:text-[14px] font-normal leading-4 lg:leading-5 text-gray-800 line-clamp-2 my-2 min-h-[32px] lg:min-h-[40px]">
-                  {item.title}
-                </p>
-                <div className="flex items-center gap-1 mb-3">
-                  <span className="text-yellow-500 text-[11px]">
-                    {item.star}
-                  </span>
-                  <span className="text-[11px] font-medium">{item.rating}</span>
-                  <span className="text-[11px] text-gray-400">
-                    ({item.comments})
-                  </span>
-                </div>
-                <button
-                  className="mt-auto w-full flex items-center justify-center gap-2 bg-violet-700 hover:bg-violet-800 py-1.5 lg:py-2 text-white text-sm rounded-lg transition-colors cursor-pointer"
-                  onClick={() => productCard("popular", item.id)}
-                >
-                  {isProduct ? (
-                    <span className="flex items-center gap-2">
-                      Savatga qo'shildi <IoCheckmarkDone size={16} />
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      <FaOpencart size={16} />
-                      Savatga
-                    </span>
-                  )}
-                </button>
-              </div>
-            </div>
-          );
-        })}
-      </div>
-      <h2 className="flex items-center gap-1 text-xl lg:text-3xl font-semibold mb-6 cursor-pointer mt-10">
-        Smartfonlarga chegirmalar
-        <span className="mt-2">
-          <LuChevronRight />
-        </span>
-      </h2>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 lg:gap-4 w-full">
-        {PhoneData.map((item) => {
-          const key = getKey("phones", item.id);
-          const isLiked = !!liked[key];
-          const isProduct = !!product[key];
-
-          return (
-            <div
-              key={item.id}
-              className="w-full flex flex-col bg-white rounded-2xl transition-shadow duration-300 hover:shadow-xl border border-gray-100 relative group cursor-pointer"
-            >
-              <div className="w-full h-[180px] lg:h-[240px] overflow-hidden rounded-t-2xl">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                className="absolute top-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full cursor-pointer z-10"
-                onClick={() => likeToggle("phones", item.id)}
-              >
-                {isLiked ? (
-                  <IoIosHeart className="text-red-500 text-xl" />
-                ) : (
-                  <IoIosHeart className="text-violet-400 text-xl" />
-                )}
-              </div>
-
-              <div className="p-2 lg:p-3 flex flex-col flex-grow">
-                <div className="flex items-center mb-1">
-                  <p className="text-[14px] lg:text-[17px] font-bold text-violet-600 leading-tight">
-                    {item.price}
-                  </p>
-                  <span className="text-[10px] lg:text-[15px] lg:mt-1 lg:ml-1 text-violet-400">
-                    {item.plastikCard}
-                  </span>
-                </div>
-
-                <p className="text-[11px] lg:text-[12px] text-gray-400 line-through">
-                  {item.oldPrice}
-                </p>
-
-                <p className="text-[12px] lg:text-[14px] font-normal leading-4 lg:leading-5 text-gray-800 line-clamp-2 my-2 min-h-[32px] lg:min-h-[40px]">
-                  {item.title}
-                </p>
-
-                <div className="flex items-center gap-1 mb-3">
-                  <span className="text-yellow-500 text-[11px]">
-                    {item.star}
-                  </span>
-                  <span className="text-[11px] font-medium">{item.rating}</span>
-                  <span className="text-[11px] text-gray-400">
-                    ({item.comments})
-                  </span>
-                </div>
-
-                <button
-                  className="mt-auto w-full flex items-center justify-center gap-2 bg-violet-700 hover:bg-violet-800 py-1.5 lg:py-2 text-white text-sm rounded-lg transition-colors cursor-pointer"
-                  onClick={() => productCard("phones", item.id)}
-                >
-                  {isProduct ? (
-                    <span className="flex items-center gap-2">
-                      Savatga qo'shildi <IoCheckmarkDone size={16} />
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      <FaOpencart size={16} />
-                      Savatga
-                    </span>
-                  )}
-                </button>
-              </div>
-            </div>
-          );
-        })}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+          {getItemsBySection("popular").map(renderProductCard)}
+        </div>
       </div>
 
-      <h2 className="flex items-center gap-1 text-xl lg:text-3xl font-semibold mb-6 cursor-pointer mt-10">
-        Arzon narxlar kafolati
-        <span className="mt-2">
-          <LuChevronRight />
-        </span>
-      </h2>
+      <div className="mb-12">
+        <h2 className="flex items-center gap-2 text-2xl lg:text-3xl font-bold mb-6">
+          Arzon narxlar kafolati <LuChevronRight className="mt-1" />
+        </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 lg:gap-4 w-full">
-        {CheapData.map((item) => {
-          const key = getKey("cheap", item.id);
-          const isLiked = !!liked[key];
-          const isProduct = !!product[key];
-
-          return (
-            <div
-              key={item.id}
-              className="w-full flex flex-col bg-white rounded-2xl transition-shadow duration-300 hover:shadow-xl border border-gray-100 relative group cursor-pointer"
-            >
-              <div className="w-full h-[180px] lg:h-[240px] overflow-hidden rounded-t-2xl">
-                <img
-                  src={item.img}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-              </div>
-
-              <div
-                className="absolute top-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full cursor-pointer z-10"
-                onClick={() => likeToggle("cheap", item.id)}
-              >
-                {isLiked ? (
-                  <IoIosHeart className="text-red-500 text-xl" />
-                ) : (
-                  <IoIosHeart className="text-violet-400 text-xl" />
-                )}
-              </div>
-
-              <div className="p-2 lg:p-3 flex flex-col flex-grow">
-                <div className="flex items-center mb-1">
-                  <p className="text-[14px] lg:text-[17px] font-bold text-violet-600 leading-tight">
-                    {item.price}
-                  </p>
-                  <span className="text-[10px] lg:text-[15px] lg:mt-1 lg:ml-1 text-violet-400">
-                    {item.plastikCard}
-                  </span>
-                </div>
-
-                <p className="text-[11px] lg:text-[12px] text-gray-400 line-through">
-                  {item.oldPrice}
-                </p>
-
-                <p className="text-[12px] lg:text-[14px] font-normal leading-4 lg:leading-5 text-gray-800 line-clamp-2 my-2 min-h-[32px] lg:min-h-[40px]">
-                  {item.title}
-                </p>
-
-                <div className="flex items-center gap-1 mb-3">
-                  <span className="text-yellow-500 text-[11px]">
-                    {item.star}
-                  </span>
-                  <span className="text-[11px] font-medium">{item.rating}</span>
-                  <span className="text-[11px] text-gray-400">
-                    ({item.comments})
-                  </span>
-                </div>
-
-                <button
-                  className="mt-auto w-full flex items-center justify-center gap-2 bg-violet-700 hover:bg-violet-800 py-1.5 lg:py-2 text-white text-sm rounded-lg transition-colors cursor-pointer"
-                  onClick={() => productCard("cheap", item.id)}
-                >
-                  {isProduct ? (
-                    <span className="flex items-center gap-2">
-                      Savatga qo'shildi <IoCheckmarkDone size={16} />
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      <FaOpencart size={16} />
-                      Savatga
-                    </span>
-                  )}
-                </button>
-              </div>
-            </div>
-          );
-        })}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+          {getItemsBySection("cheap").map(renderProductCard)}
+        </div>
       </div>
-    </section>
+
+      <div className="mb-12">
+        <h2 className="flex items-center gap-2 text-2xl lg:text-3xl font-bold mb-6">
+          Smartfonlar <LuChevronRight className="mt-1" />
+        </h2>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6">
+          {getItemsBySection("phones").map(renderProductCard)}
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ import { IoIosHeart } from "react-icons/io";
 
 const populariCardData = [
   {
+    section: "popular",
     id: 1,
     img: "https://images.uzum.uz/d59mfn3s2tab83s94ucg/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -18,6 +19,7 @@ const populariCardData = [
   },
   {
     id: 2,
+    section: "popular",
     img: "https://images.uzum.uz/d59mgdjtqdhjp1vd9r60/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -31,6 +33,7 @@ const populariCardData = [
   },
   {
     id: 3,
+    section: "popular",
     img: "https://images.uzum.uz/d0ucdg8n274lpu37p3g0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -44,6 +47,7 @@ const populariCardData = [
   },
   {
     id: 4,
+    section: "popular",
     img: "https://images.uzum.uz/d1utl0b4eu2jc8ghqtog/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -57,6 +61,7 @@ const populariCardData = [
   },
   {
     id: 5,
+    section: "popular",
     img: "https://images.uzum.uz/d1uto3fiub3cuo9d9k20/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -70,6 +75,7 @@ const populariCardData = [
   },
   {
     id: 6,
+    section: "popular",
     img: "https://images.uzum.uz/d19qdib3uvppu2acfuu0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -83,6 +89,7 @@ const populariCardData = [
   },
   {
     id: 7,
+    section: "popular",
     img: "https://images.uzum.uz/cv82l15pb7f9qcngu6a0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -96,6 +103,7 @@ const populariCardData = [
   },
   {
     id: 8,
+    section: "popular",
     img: "https://images.uzum.uz/d19qtcr3uvppu2acg5q0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -109,6 +117,7 @@ const populariCardData = [
   },
   {
     id: 9,
+    section: "popular",
     img: "https://images.uzum.uz/d1sb39il822j1ojb0v00/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -122,6 +131,7 @@ const populariCardData = [
   },
   {
     id: 10,
+    section: "popular",
     img: "https://images.uzum.uz/d19aiji7s4fup34ahq00/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -135,6 +145,7 @@ const populariCardData = [
   },
   {
     id: 11,
+    section: "popular",
     img: "https://images.uzum.uz/d1agtaa7s4fup34aqe80/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -148,6 +159,7 @@ const populariCardData = [
   },
   {
     id: 12,
+    section: "popular",
     img: "https://images.uzum.uz/d1uv9jt2llnbjcof5im0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -161,6 +173,7 @@ const populariCardData = [
   },
   {
     id: 13,
+    section: "popular",
     img: "https://images.uzum.uz/d04biuc7fd1idphtbopg/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -175,6 +188,7 @@ const populariCardData = [
   },
   {
     id: 14,
+    section: "popular",
     img: "https://images.uzum.uz/d44358tsp2tj49o8b2ng/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -189,6 +203,7 @@ const populariCardData = [
   },
   {
     id: 15,
+    section: "popular",
     img: "https://images.uzum.uz/cum88l5ht56sc95edoh0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -203,6 +218,7 @@ const populariCardData = [
   },
   {
     id: 16,
+    section: "popular",
     img: "https://images.uzum.uz/cdi9rhbb3ho5lmurelpg/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -217,6 +233,7 @@ const populariCardData = [
   },
   {
     id: 17,
+    section: "popular",
     img: "https://images.uzum.uz/d0go25j3uvph509to8ug/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -231,6 +248,7 @@ const populariCardData = [
   },
   {
     id: 18,
+    section: "popular",
     img: "https://images.uzum.uz/cri05kc2gps3jqbgftrg/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -245,6 +263,7 @@ const populariCardData = [
   },
   {
     id: 19,
+    section: "popular",
     img: "https://images.uzum.uz/curbrfdpb7f8r31vpl6g/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     heartIcon2: <IoIosHeart />,
@@ -259,6 +278,7 @@ const populariCardData = [
   },
   {
     id: 20,
+    section: "popular",
     img: "https://images.uzum.uz/d2fbqtj4eu2hrb2q1lr0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     price: "659 750",
@@ -271,10 +291,8 @@ const populariCardData = [
     rating: 5.0,
     comments: "151 sharhlar",
   },
-];
-
-export const PhoneData = [
   {
+    section: "phones",
     id: 1,
     img: "https://images.uzum.uz/cve26k5pb7f9qcnikucg/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -288,6 +306,7 @@ export const PhoneData = [
     comments: "454 sharhlar",
   },
   {
+    section: "phones",
     id: 2,
     img: "https://images.uzum.uz/cvmbrqdpb7f8td1j9e20/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -301,6 +320,7 @@ export const PhoneData = [
     comments: "27 sharhlar",
   },
   {
+    section: "phones",
     id: 3,
     img: "https://images.uzum.uz/cve274jvgbkm5ehl26sg/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -313,6 +333,7 @@ export const PhoneData = [
     comments: "112 sharhlar",
   },
   {
+    section: "phones",
     id: 4,
     img: "https://images.uzum.uz/d41hrilv2sjj05os7k50/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -326,6 +347,7 @@ export const PhoneData = [
     comments: "89 sharhlar",
   },
   {
+    section: "phones",
     id: 5,
     img: "https://images.uzum.uz/cuib3etht56sc95d8r1g/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -337,10 +359,8 @@ export const PhoneData = [
     rating: 4.6,
     comments: "235 sharhlar",
   },
-];
-
-export const CheapData = [
   {
+    section: "cheap",
     id: 1,
     img: "https://images.uzum.uz/cve26k5pb7f9qcnikucg/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -354,6 +374,7 @@ export const CheapData = [
     comments: "454 sharhlar",
   },
   {
+    section: "cheap",
     id: 2,
     img: "https://images.uzum.uz/d5d396bs2tab83s9o6bg/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -366,6 +387,7 @@ export const CheapData = [
     comments: "59 sharhlar",
   },
   {
+    section: "cheap",
     id: 3,
     img: "https://images.uzum.uz/d59a5k3tqdhjp1vd7uc0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -378,6 +400,7 @@ export const CheapData = [
     comments: "6 sharhlar",
   },
   {
+    section: "cheap",
     id: 4,
     img: "https://images.uzum.uz/d59mskbtqdhjp1vd9ub0/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
@@ -390,13 +413,15 @@ export const CheapData = [
     comments: "89 sharhlar",
   },
   {
+    section: "cheap",
     id: 5,
     img: "https://images.uzum.uz/d59of3rs2tab83s95j2g/t_product_540_high.jpg",
     hearIcon: <CiHeart />,
     price: "1 889 490",
     plastikCard: <CiCreditCard1 />,
     oldPirce: "1 917 000",
-    title: "Yugurish yulakchasi EasyFit E7, 120 kg gacha, elektor motorli, yigiladigan",
+    title:
+      "Yugurish yulakchasi EasyFit E7, 120 kg gacha, elektor motorli, yigiladigan",
     star: <FaStar />,
     rating: 4.6,
     comments: "235 sharhlar",
