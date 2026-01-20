@@ -56,7 +56,6 @@ const Card = () => {
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-
               <div
                 className="absolute top-2 right-2 p-1.5 bg-white/80 backdrop-blur-sm rounded-full cursor-pointer z-10"
                 onClick={() => likeToggle("popular", item.id)}
@@ -67,7 +66,6 @@ const Card = () => {
                   <IoIosHeart className="text-violet-400 text-xl" />
                 )}
               </div>
-
               <div className="p-2 lg:p-3 flex flex-col flex-grow">
                 <div className="flex items-center mb-1">
                   <p className="text-[14px] lg:text-[17px] font-bold text-violet-600 leading-tight">
@@ -77,15 +75,12 @@ const Card = () => {
                     {item.plastikCard}
                   </span>
                 </div>
-
                 <p className="text-[11px] lg:text-[12px] text-gray-400 line-through">
                   {item.oldPrice}
                 </p>
-
                 <p className="text-[12px] lg:text-[14px] font-normal leading-4 lg:leading-5 text-gray-800 line-clamp-2 my-2 min-h-[32px] lg:min-h-[40px]">
                   {item.title}
                 </p>
-
                 <div className="flex items-center gap-1 mb-3">
                   <span className="text-yellow-500 text-[11px]">
                     {item.star}
@@ -95,7 +90,6 @@ const Card = () => {
                     ({item.comments})
                   </span>
                 </div>
-
                 <button
                   className="mt-auto w-full flex items-center justify-center gap-2 bg-violet-700 hover:bg-violet-800 py-1.5 lg:py-2 text-white text-sm rounded-lg transition-colors cursor-pointer"
                   onClick={() => productCard("popular", item.id)}
