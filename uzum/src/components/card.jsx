@@ -72,7 +72,7 @@ const Card = () => {
           {isLiked ? (
             <IoIosHeart className="text-red-500 text-xl" />
           ) : (
-            <IoIosHeart className="text-violet-500 text-xl" />
+            <IoIosHeart className="text-gray-500 text-xl" />
           )}
         </button>
 
