@@ -35,7 +35,7 @@ const populariCardData = [
     id: 3,
     section: "popular",
     img: "https://images.uzum.uz/d0ucdg8n274lpu37p3g0/t_product_540_high.jpg",
-    hearIcon: <CiHeart />,
+    hearIcon: <CiHeart />,  
     heartIcon2: <IoIosHeart />,
     price: "126 972",
     plastikCard: <CiCreditCard1 />,
