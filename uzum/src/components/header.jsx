@@ -17,6 +17,7 @@ const Header = () => {
   const [navModal, setNavModal] = useState(false);
   const [flagDown, setFlagDown] = useState(false);
   const [menuBar, setMenuBar] = useState(false);
+  const [search, setSearch] = useState("")
 
   const toggleModal = () => {
     setOpenModal(!openModal);
@@ -307,6 +308,8 @@ const Header = () => {
           <input
             type="text"
             placeholder="Mahsulotlar va turkumlar izlash"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
             className="border-1 p-1.5 w-[520px] outline-hidden border-gray-300 rounded-l-[5px]"
           />
           <span className=" bg-violet-400 text-white w-15 h-full p-[9px] rounded-r-[5px] ">
